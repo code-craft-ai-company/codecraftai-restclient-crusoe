@@ -2,7 +2,7 @@
 
 ## Package Skeleton
 
-- [x] 1. Create `source/packages/automojo/interop/crusoe/` package tree.
+- [x] 1. Create `source/packages/automojo/restclient/crusoe/` package tree.
 - [x] 2. Add `aspectscrusoe.py` with `DEFAULT_CRUSOE_ASPECTS`.
 
 ## Client Core

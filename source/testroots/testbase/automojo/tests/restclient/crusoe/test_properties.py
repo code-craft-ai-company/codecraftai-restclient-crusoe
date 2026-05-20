@@ -24,18 +24,18 @@ from automojo.errors.exceptions import SemanticError
 
 from automojo.interfaces.itaskhandle import TaskState
 
-from automojo.interop.crusoe.aspectscrusoe import AspectsCrusoe
-from automojo.interop.crusoe.apigroups.groupsupport import (
+from automojo.restclient.crusoe.aspectscrusoe import AspectsCrusoe
+from automojo.restclient.crusoe.apigroups.groupsupport import (
     compose_leaf, encode_segment, iter_paged_items
 )
-from automojo.interop.crusoe.apigroups.subnetsgroup import cidr_is_contained
-from automojo.interop.crusoe.exceptions.crusoeexceptions import (
+from automojo.restclient.crusoe.apigroups.subnetsgroup import cidr_is_contained
+from automojo.restclient.crusoe.exceptions.crusoeexceptions import (
     CrusoeCidrValidationError
 )
-from automojo.interop.crusoe.model.crusoeoperationresult import (
+from automojo.restclient.crusoe.model.crusoeoperationresult import (
     CrusoeOperationResult
 )
-from automojo.interop.crusoe.model.crusoetaskhandle import (
+from automojo.restclient.crusoe.model.crusoetaskhandle import (
     CrusoeTaskHandle, map_operation_state
 )
 

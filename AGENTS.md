@@ -26,7 +26,7 @@ that are well design, cohesive, and easy to use and that provide rapid but stabl
 
 # Project Overview
 
-The `automojo-interop-crusoe` package is the venue-specific REST client for
+The `automojo-restclient-crusoe` package is the venue-specific REST client for
 Crusoe Cloud, a GPU-first cloud whose API at `api.crusoecloud.com` is
 closely AWS-shaped: VPCs, subnets, security groups, virtual machines,
 disks, and (critically for HPC workloads) InfiniBand-enabled placement
@@ -49,10 +49,10 @@ enter as typed `CrusoeApiKeyCredential` instances from
 `automojo-credentials`.
 
 # Testing Conventions
-The 'automojo-interop-crusoe' package repository utilizes the 'testbase' framework
+The 'automojo-restclient-crusoe' package repository utilizes the 'testbase' framework
 for tests that require live resources, and the 'unittest' framework for isolated
 component tests. Single-host tests live under
-'source/testroots/automojo/tests/singlehost/interop/crusoe'.
+'source/testroots/automojo/tests/singlehost/restclient/crusoe'.
 
 Property-based tests (hypothesis) are required for paging, URL composition,
 idempotent retry semantics, and CIDR/subnet containment checks on the
@@ -86,7 +86,7 @@ When checking out the code for this repository in order to test changes, agents 
 # Codegen Decision
 
 Per §9.2a of `PLAN-VPN-AND-CLOUD-PROVISIONING.md`, the typed model and spec
-classes under `source/packages/automojo/interop/crusoe/model/` and
+classes under `source/packages/automojo/restclient/crusoe/model/` and
 `.../specs/` are **hand-authored** from the documented Crusoe Cloud API
 (`api.crusoecloud.com/v1alpha5/`).
 

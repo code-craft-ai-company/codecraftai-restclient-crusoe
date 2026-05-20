@@ -29,23 +29,23 @@ from automojo.credentials.crusoeapikeycredential import CrusoeApiKeyCredential
 
 from automojo.restclient.base.restclientbase import RestClientBase
 
-from automojo.interop.crusoe.aspectscrusoe import (
+from automojo.restclient.crusoe.aspectscrusoe import (
     AspectsCrusoe, DEFAULT_CRUSOE_ASPECTS
 )
-from automojo.interop.crusoe.apigroups.disksgroup import DisksGroup
-from automojo.interop.crusoe.apigroups.imagesgroup import ImagesGroup
-from automojo.interop.crusoe.apigroups.operationsgroup import OperationsGroup
-from automojo.interop.crusoe.apigroups.placementgroupsgroup import (
+from automojo.restclient.crusoe.apigroups.disksgroup import DisksGroup
+from automojo.restclient.crusoe.apigroups.imagesgroup import ImagesGroup
+from automojo.restclient.crusoe.apigroups.operationsgroup import OperationsGroup
+from automojo.restclient.crusoe.apigroups.placementgroupsgroup import (
     PlacementGroupsGroup
 )
-from automojo.interop.crusoe.apigroups.securitygroupsgroup import (
+from automojo.restclient.crusoe.apigroups.securitygroupsgroup import (
     SecurityGroupsGroup
 )
-from automojo.interop.crusoe.apigroups.sshkeysgroup import SshKeysGroup
-from automojo.interop.crusoe.apigroups.subnetsgroup import SubnetsGroup
-from automojo.interop.crusoe.apigroups.tagsgroup import TagsGroup
-from automojo.interop.crusoe.apigroups.vmsgroup import VmsGroup
-from automojo.interop.crusoe.apigroups.vpcsgroup import VpcsGroup
+from automojo.restclient.crusoe.apigroups.sshkeysgroup import SshKeysGroup
+from automojo.restclient.crusoe.apigroups.subnetsgroup import SubnetsGroup
+from automojo.restclient.crusoe.apigroups.tagsgroup import TagsGroup
+from automojo.restclient.crusoe.apigroups.vmsgroup import VmsGroup
+from automojo.restclient.crusoe.apigroups.vpcsgroup import VpcsGroup
 
 
 CRUSOE_API_HOST = "api.crusoecloud.com"

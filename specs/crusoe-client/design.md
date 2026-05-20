@@ -52,7 +52,7 @@ Exceptions: `CrusoeAuthenticationError`, `CrusoeCidrValidationError`,
 ## Module Layout
 
 ```
-source/packages/automojo/interop/crusoe/
+source/packages/automojo/restclient/crusoe/
 ├── crusoeclient.py
 ├── aspectscrusoe.py
 ├── apigroups/{vpcsgroup, subnetsgroup, securitygroupsgroup, sshkeysgroup,

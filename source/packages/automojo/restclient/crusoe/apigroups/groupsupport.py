@@ -22,7 +22,7 @@ from requests import Response
 
 from automojo.errors.exceptions import SemanticError
 
-from automojo.interop.crusoe.exceptions.crusoeexceptions import (
+from automojo.restclient.crusoe.exceptions.crusoeexceptions import (
     CrusoeApiError, CrusoeAuthenticationError
 )
 

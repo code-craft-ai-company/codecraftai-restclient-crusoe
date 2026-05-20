@@ -2,7 +2,7 @@
 Automation Mojo Interop - Crusoe Cloud
 =========================================
 
-The ``automojo-interop-crusoe`` package is the venue-specific REST client for Crusoe
+The ``automojo-restclient-crusoe`` package is the venue-specific REST client for Crusoe
 Cloud, a GPU-first cloud whose API at ``api.crusoecloud.com`` is closely AWS-shaped: VPCs,
 subnets, security groups, virtual machines, disks, and InfiniBand-enabled placement
 groups. Crusoe's relatively conventional shape makes it the simplest cloud-shaped AI venue
@@ -22,8 +22,8 @@ Repository Structure
 
 - ``development/`` - Runtime environment scripts.
 - ``repository-setup/`` - Repository homing and setup scripts.
-- ``source/packages/automojo/interop/crusoe/`` - Package source code.
-- ``source/testroots/testbase/automojo/tests/interop/crusoe/`` - TestBase test roots.
+- ``source/packages/automojo/restclient/crusoe/`` - Package source code.
+- ``source/testroots/testbase/automojo/tests/restclient/crusoe/`` - TestBase test roots.
 - ``specs/`` - Requirements, design, and task documentation (Kiro-style).
 - ``userguide/`` - Standards, conventions, and documentation.
 

@@ -1,6 +1,6 @@
 [tool.poetry]
-name = "automojo-interop-crusoe"
-description = "Automation Mojo - Crusoe Cloud interop client"
+name = "automojo-restclient-crusoe"
+description = "Automation Mojo - Crusoe Cloud REST client"
 version = "0.0.1"
 authors = []
 readme = "README.rst"
@@ -13,7 +13,9 @@ classifiers = [
 keywords = [
     "python",
     "automation",
-    "automojo"
+    "automojo",
+    "restclient",
+    "crusoe"
 ]
 packages = [{include="automojo", from="source/packages"}]
 

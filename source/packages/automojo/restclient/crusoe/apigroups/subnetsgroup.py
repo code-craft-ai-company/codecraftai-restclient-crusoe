@@ -21,17 +21,17 @@ from automojo.errors.exceptions import SemanticError
 
 from automojo.restclient.base.restapigroup import RestApiGroup
 
-from automojo.interop.crusoe.aspectscrusoe import (
+from automojo.restclient.crusoe.aspectscrusoe import (
     AspectsCrusoe, DEFAULT_CRUSOE_ASPECTS
 )
-from automojo.interop.crusoe.apigroups.groupsupport import (
+from automojo.restclient.crusoe.apigroups.groupsupport import (
     compose_leaf, iter_paged_items, raise_for_status, safe_json
 )
-from automojo.interop.crusoe.exceptions.crusoeexceptions import (
+from automojo.restclient.crusoe.exceptions.crusoeexceptions import (
     CrusoeCidrValidationError
 )
-from automojo.interop.crusoe.model.crusoesubnet import CrusoeSubnet
-from automojo.interop.crusoe.specs.crusoesubnetspec import CrusoeSubnetSpec
+from automojo.restclient.crusoe.model.crusoesubnet import CrusoeSubnet
+from automojo.restclient.crusoe.specs.crusoesubnetspec import CrusoeSubnetSpec
 
 
 def cidr_is_contained(*, child_cidr: str, parent_cidr: str) -> bool:

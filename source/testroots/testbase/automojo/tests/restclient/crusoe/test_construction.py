@@ -18,9 +18,9 @@ from automojo.errors.exceptions import ConfigurationError
 
 from automojo.credentials.basiccredential import BasicCredential
 
-from automojo.interop.crusoe.crusoeclient import CrusoeClient
-from automojo.interop.crusoe.apigroups.vpcsgroup import VpcsGroup
-from automojo.interop.crusoe.apigroups.vmsgroup import VmsGroup
+from automojo.restclient.crusoe.crusoeclient import CrusoeClient
+from automojo.restclient.crusoe.apigroups.vpcsgroup import VpcsGroup
+from automojo.restclient.crusoe.apigroups.vmsgroup import VmsGroup
 
 
 def test_client_construction(crusoe_client: CrusoeClient) -> None:

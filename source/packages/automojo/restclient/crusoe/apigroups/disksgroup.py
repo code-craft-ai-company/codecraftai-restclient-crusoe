@@ -18,15 +18,15 @@ from automojo.errors.exceptions import SemanticError
 
 from automojo.restclient.base.restapigroup import RestApiGroup
 
-from automojo.interop.crusoe.aspectscrusoe import (
+from automojo.restclient.crusoe.aspectscrusoe import (
     AspectsCrusoe, DEFAULT_CRUSOE_ASPECTS
 )
-from automojo.interop.crusoe.apigroups.groupsupport import (
+from automojo.restclient.crusoe.apigroups.groupsupport import (
     compose_leaf, iter_paged_items, raise_for_status, safe_json
 )
-from automojo.interop.crusoe.model.crusoedisk import CrusoeDisk
-from automojo.interop.crusoe.model.crusoetaskhandle import CrusoeTaskHandle
-from automojo.interop.crusoe.specs.crusoediskspec import CrusoeDiskSpec
+from automojo.restclient.crusoe.model.crusoedisk import CrusoeDisk
+from automojo.restclient.crusoe.model.crusoetaskhandle import CrusoeTaskHandle
+from automojo.restclient.crusoe.specs.crusoediskspec import CrusoeDiskSpec
 
 
 def extract_operation_id(*, payload: Dict[str, Any]) -> Optional[str]:

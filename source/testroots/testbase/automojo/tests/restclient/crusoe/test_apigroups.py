@@ -15,20 +15,20 @@ __credits__ = []
 import pytest
 import requests_mock
 
-from automojo.interop.crusoe.crusoeclient import CrusoeClient
-from automojo.interop.crusoe.exceptions.crusoeexceptions import (
+from automojo.restclient.crusoe.crusoeclient import CrusoeClient
+from automojo.restclient.crusoe.exceptions.crusoeexceptions import (
     CrusoeApiError, CrusoeAuthenticationError, CrusoeCidrValidationError,
     CrusoePlacementMismatchError
 )
-from automojo.interop.crusoe.specs.crusoeplacementgroupspec import (
+from automojo.restclient.crusoe.specs.crusoeplacementgroupspec import (
     CrusoePlacementGroupSpec
 )
-from automojo.interop.crusoe.specs.crusoesecuritygroupspec import (
+from automojo.restclient.crusoe.specs.crusoesecuritygroupspec import (
     CrusoeSecurityGroupSpec
 )
-from automojo.interop.crusoe.specs.crusoesubnetspec import CrusoeSubnetSpec
-from automojo.interop.crusoe.specs.crusoevmlaunchspec import CrusoeVmLaunchSpec
-from automojo.interop.crusoe.specs.crusoevpcspec import CrusoeVpcSpec
+from automojo.restclient.crusoe.specs.crusoesubnetspec import CrusoeSubnetSpec
+from automojo.restclient.crusoe.specs.crusoevmlaunchspec import CrusoeVmLaunchSpec
+from automojo.restclient.crusoe.specs.crusoevpcspec import CrusoeVpcSpec
 
 
 BASE = "https://api.crusoecloud.com/v1alpha5"

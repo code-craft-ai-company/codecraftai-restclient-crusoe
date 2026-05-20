@@ -21,16 +21,16 @@ from automojo.errors.exceptions import SemanticError
 
 from automojo.interfaces.itaskhandle import TaskResult, TaskState
 
-from automojo.interop.crusoe.aspectscrusoe import (
+from automojo.restclient.crusoe.aspectscrusoe import (
     AspectsCrusoe, DEFAULT_CRUSOE_ASPECTS
 )
-from automojo.interop.crusoe.model.crusoeoperationresult import (
+from automojo.restclient.crusoe.model.crusoeoperationresult import (
     CrusoeOperationResult
 )
 
 
 if TYPE_CHECKING:
-    from automojo.interop.crusoe.apigroups.operationsgroup import OperationsGroup
+    from automojo.restclient.crusoe.apigroups.operationsgroup import OperationsGroup
 
 
 TERMINAL_TASK_STATES = (

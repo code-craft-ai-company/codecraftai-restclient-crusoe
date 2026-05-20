@@ -19,16 +19,16 @@ from automojo.errors.exceptions import SemanticError
 
 from automojo.restclient.base.restapigroup import RestApiGroup
 
-from automojo.interop.crusoe.aspectscrusoe import (
+from automojo.restclient.crusoe.aspectscrusoe import (
     AspectsCrusoe, DEFAULT_CRUSOE_ASPECTS
 )
-from automojo.interop.crusoe.apigroups.groupsupport import (
+from automojo.restclient.crusoe.apigroups.groupsupport import (
     compose_leaf, iter_paged_items, raise_for_status, safe_json
 )
-from automojo.interop.crusoe.model.crusoeplacementgroup import (
+from automojo.restclient.crusoe.model.crusoeplacementgroup import (
     CrusoePlacementGroup
 )
-from automojo.interop.crusoe.specs.crusoeplacementgroupspec import (
+from automojo.restclient.crusoe.specs.crusoeplacementgroupspec import (
     CrusoePlacementGroupSpec
 )
 
