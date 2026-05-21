@@ -65,3 +65,23 @@ class CrusoeVpc:
         rtnval = cls(vpc_id=vpc_id, name=name, cidr=cidr,
                      project_id=project_id, state=state, labels=labels)
         return rtnval
+
+    def to_dict(self) -> Dict[str, Any]:
+        """
+            Serialize this :class:`CrusoeVpc` to a canonical API payload.
+
+            The emitted keys match the primary key names that
+            :meth:`from_dict` reads, so ``from_dict(to_dict(x))``
+            reconstructs an equal record.
+
+            :returns: A dictionary payload describing this VPC.
+        """
+        rtnval: Dict[str, Any] = {
+            "id": self.vpc_id,
+            "name": self.name,
+            "cidr_block": self.cidr,
+            "project_id": self.project_id,
+            "state": self.state,
+            "labels": self.labels,
+        }
+        return rtnval

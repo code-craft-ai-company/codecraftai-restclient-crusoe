@@ -75,3 +75,25 @@ class CrusoeSecurityGroup:
                      vpc_id=vpc_id, ingress_rules=ingress_rules,
                      egress_rules=egress_rules, state=state, labels=labels)
         return rtnval
+
+    def to_dict(self) -> Dict[str, Any]:
+        """
+            Serialize this :class:`CrusoeSecurityGroup` to a canonical
+            API payload.
+
+            The emitted keys match the primary key names that
+            :meth:`from_dict` reads, so ``from_dict(to_dict(x))``
+            reconstructs an equal record.
+
+            :returns: A dictionary payload describing this security group.
+        """
+        rtnval: Dict[str, Any] = {
+            "id": self.security_group_id,
+            "name": self.name,
+            "vpc_id": self.vpc_id,
+            "ingress_rules": self.ingress_rules,
+            "egress_rules": self.egress_rules,
+            "state": self.state,
+            "labels": self.labels,
+        }
+        return rtnval

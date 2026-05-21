@@ -71,3 +71,24 @@ class CrusoePlacementGroup:
                      interconnect=interconnect, project_id=project_id,
                      state=state, labels=labels)
         return rtnval
+
+    def to_dict(self) -> Dict[str, Any]:
+        """
+            Serialize this :class:`CrusoePlacementGroup` to a canonical
+            API payload.
+
+            The emitted keys match the primary key names that
+            :meth:`from_dict` reads, so ``from_dict(to_dict(x))``
+            reconstructs an equal record.
+
+            :returns: A dictionary payload describing this placement group.
+        """
+        rtnval: Dict[str, Any] = {
+            "id": self.placement_group_id,
+            "name": self.name,
+            "interconnect": self.interconnect,
+            "project_id": self.project_id,
+            "state": self.state,
+            "labels": self.labels,
+        }
+        return rtnval

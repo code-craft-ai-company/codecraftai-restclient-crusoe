@@ -63,3 +63,23 @@ class CrusoeOperationResult:
         rtnval = cls(operation_id=operation_id, state=state,
                      progress=progress, error=error, result=result)
         return rtnval
+
+    def to_dict(self) -> Dict[str, Any]:
+        """
+            Serialize this :class:`CrusoeOperationResult` to a canonical
+            API payload.
+
+            The emitted keys match the primary key names that
+            :meth:`from_dict` reads, so ``from_dict(to_dict(x))``
+            reconstructs an equal record.
+
+            :returns: A dictionary payload describing this operation.
+        """
+        rtnval: Dict[str, Any] = {
+            "id": self.operation_id,
+            "state": self.state,
+            "progress": self.progress,
+            "error": self.error,
+            "result": self.result,
+        }
+        return rtnval
