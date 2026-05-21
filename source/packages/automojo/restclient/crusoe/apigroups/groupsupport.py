@@ -148,8 +148,12 @@ def iter_paged_items(*, fetch_page: Callable[[Optional[str]], Dict[str, Any]],
         :param cursor_field: Name of the next-cursor field on each page.
 
         :returns: An iterator over the item dictionaries.
+
+        :raises: :class:`CrusoeApiError` when the endpoint returns a cursor
+            token that has already been seen (cursor cycle).
     """
     cursor: Optional[str] = None
+    seen_cursors: List[str] = []
     while True:
         page = fetch_page(cursor)
 
@@ -163,5 +167,14 @@ def iter_paged_items(*, fetch_page: Callable[[Optional[str]], Dict[str, Any]],
         next_cursor = page.get(cursor_field, None)
         if next_cursor is None or len(str(next_cursor)) == 0:
             break
+
+        next_cursor_str = str(next_cursor)
+        if next_cursor_str in seen_cursors:
+            err_msg_lines = ["Crusoe cursor pagination detected a cursor cycle."]
+            err_msg_lines.append("REPEATED CURSOR: {}".format(next_cursor_str))
+            err_msg = os.linesep.join(err_msg_lines)
+            raise CrusoeApiError(err_msg)
+
+        seen_cursors.append(next_cursor_str)
         cursor = next_cursor
     return
