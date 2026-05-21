@@ -74,3 +74,25 @@ class CrusoeDisk:
                      disk_type=disk_type, location=location, state=state,
                      attached_to=attached_to, labels=labels)
         return rtnval
+
+    def to_dict(self) -> Dict[str, Any]:
+        """
+            Serialize this :class:`CrusoeDisk` to a canonical API payload.
+
+            The emitted keys match the primary key names that
+            :meth:`from_dict` reads, so ``from_dict(to_dict(x))``
+            reconstructs an equal record.
+
+            :returns: A dictionary payload describing this disk.
+        """
+        rtnval: Dict[str, Any] = {
+            "id": self.disk_id,
+            "name": self.name,
+            "size_gib": self.size_gib,
+            "type": self.disk_type,
+            "location": self.location,
+            "state": self.state,
+            "attached_to": self.attached_to,
+            "labels": self.labels,
+        }
+        return rtnval

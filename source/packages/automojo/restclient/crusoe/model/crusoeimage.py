@@ -61,3 +61,22 @@ class CrusoeImage:
         rtnval = cls(image_id=image_id, name=name, family=family,
                      version=version, architecture=architecture)
         return rtnval
+
+    def to_dict(self) -> Dict[str, Any]:
+        """
+            Serialize this :class:`CrusoeImage` to a canonical API payload.
+
+            The emitted keys match the primary key names that
+            :meth:`from_dict` reads, so ``from_dict(to_dict(x))``
+            reconstructs an equal record.
+
+            :returns: A dictionary payload describing this image.
+        """
+        rtnval: Dict[str, Any] = {
+            "id": self.image_id,
+            "name": self.name,
+            "family": self.family,
+            "version": self.version,
+            "architecture": self.architecture,
+        }
+        return rtnval

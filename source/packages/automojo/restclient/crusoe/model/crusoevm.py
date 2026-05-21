@@ -88,3 +88,27 @@ class CrusoeVm:
                      placement_group_id=placement_group_id,
                      network_interfaces=network_interfaces, labels=labels)
         return rtnval
+
+    def to_dict(self) -> Dict[str, Any]:
+        """
+            Serialize this :class:`CrusoeVm` to a canonical API payload.
+
+            The emitted keys match the primary key names that
+            :meth:`from_dict` reads, so ``from_dict(to_dict(x))``
+            reconstructs an equal record.
+
+            :returns: A dictionary payload describing this VM.
+        """
+        rtnval: Dict[str, Any] = {
+            "id": self.vm_id,
+            "name": self.name,
+            "type": self.instance_type,
+            "location": self.location,
+            "state": self.state,
+            "project_id": self.project_id,
+            "subnet_id": self.subnet_id,
+            "ib_partition_id": self.placement_group_id,
+            "network_interfaces": self.network_interfaces,
+            "labels": self.labels,
+        }
+        return rtnval
