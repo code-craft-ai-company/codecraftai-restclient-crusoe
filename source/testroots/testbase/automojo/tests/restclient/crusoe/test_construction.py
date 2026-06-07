@@ -8,19 +8,19 @@
 """
 
 __author__ = "Myron Walker"
-__copyright__ = "Copyright 2026, Automation Mojo LLC"
+__copyright__ = "Copyright 2026, Code Craft AI LLC"
 __credits__ = []
 
 
 import pytest
 
-from automojo.errors.exceptions import ConfigurationError
+from ccai.errors.exceptions import ConfigurationError
 
-from automojo.credentials.basiccredential import BasicCredential
+from ccai.credentials.basiccredential import BasicCredential
 
-from automojo.restclient.crusoe.crusoeclient import CrusoeClient
-from automojo.restclient.crusoe.apigroups.vpcsgroup import VpcsGroup
-from automojo.restclient.crusoe.apigroups.vmsgroup import VmsGroup
+from ccai.restclient.crusoe.crusoeclient import CrusoeClient
+from ccai.restclient.crusoe.apigroups.vpcsgroup import VpcsGroup
+from ccai.restclient.crusoe.apigroups.vmsgroup import VmsGroup
 
 
 def test_client_construction(crusoe_client: CrusoeClient) -> None:

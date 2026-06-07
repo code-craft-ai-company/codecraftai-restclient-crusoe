@@ -9,7 +9,7 @@
 """
 
 __author__ = "Myron Walker"
-__copyright__ = "Copyright 2026, Automation Mojo LLC"
+__copyright__ = "Copyright 2026, Code Craft AI LLC"
 __credits__ = []
 
 
@@ -17,8 +17,8 @@ import pytest
 
 from typing import Any, Dict, List, Optional
 
-from automojo.restclient.crusoe.apigroups.groupsupport import iter_paged_items
-from automojo.restclient.crusoe.exceptions.crusoeexceptions import CrusoeApiError
+from ccai.restclient.crusoe.apigroups.groupsupport import iter_paged_items
+from ccai.restclient.crusoe.exceptions.crusoeexceptions import CrusoeApiError
 
 
 def test_iter_paged_items_terminates_on_empty_cursor():
