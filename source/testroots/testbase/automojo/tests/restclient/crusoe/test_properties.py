@@ -9,7 +9,7 @@
 """
 
 __author__ = "Myron Walker"
-__copyright__ = "Copyright 2026, Automation Mojo LLC"
+__copyright__ = "Copyright 2026, Code Craft AI LLC"
 __credits__ = []
 
 
@@ -20,22 +20,22 @@ import pytest
 from hypothesis import given, settings
 from hypothesis import strategies as st
 
-from automojo.errors.exceptions import SemanticError
+from ccai.errors.exceptions import SemanticError
 
-from automojo.interfaces.itaskhandle import TaskState
+from ccai.interfaces.itaskhandle import TaskState
 
-from automojo.restclient.crusoe.aspectscrusoe import AspectsCrusoe
-from automojo.restclient.crusoe.apigroups.groupsupport import (
+from ccai.restclient.crusoe.aspectscrusoe import AspectsCrusoe
+from ccai.restclient.crusoe.apigroups.groupsupport import (
     compose_leaf, encode_segment, iter_paged_items
 )
-from automojo.restclient.crusoe.apigroups.subnetsgroup import cidr_is_contained
-from automojo.restclient.crusoe.exceptions.crusoeexceptions import (
+from ccai.restclient.crusoe.apigroups.subnetsgroup import cidr_is_contained
+from ccai.restclient.crusoe.exceptions.crusoeexceptions import (
     CrusoeCidrValidationError
 )
-from automojo.restclient.crusoe.model.crusoeoperationresult import (
+from ccai.restclient.crusoe.model.crusoeoperationresult import (
     CrusoeOperationResult
 )
-from automojo.restclient.crusoe.model.crusoetaskhandle import (
+from ccai.restclient.crusoe.model.crusoetaskhandle import (
     CrusoeTaskHandle, map_operation_state
 )
 

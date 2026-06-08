@@ -14,7 +14,7 @@ Crusoe interesting for HPC workloads. Async operations return typed
 
 ```
 ┌────────────────────────────────────────────────────────┐
-│  automojo-provisioning / venues / crusoe               │
+│  codecraftai-provisioning / venues / crusoe               │
 └──────────┬─────────────────────────────────────────────┘
            │
            ▼
@@ -52,7 +52,7 @@ Exceptions: `CrusoeAuthenticationError`, `CrusoeCidrValidationError`,
 ## Module Layout
 
 ```
-source/packages/automojo/restclient/crusoe/
+source/packages/ccai/restclient/crusoe/
 ├── crusoeclient.py
 ├── aspectscrusoe.py
 ├── apigroups/{vpcsgroup, subnetsgroup, securitygroupsgroup, sshkeysgroup,
@@ -67,10 +67,10 @@ source/packages/automojo/restclient/crusoe/
 
 ## See Also
 
-- `automojo-restclient-base/specs/restapigroup-enhancements/`
-- `automojo-restclient-base/specs/task-handle-base/`
-- `automojo-provisioning/specs/venue-crusoe/`
-- `automojo-credentials/specs/crusoe-credentials/`
+- `codecraftai-restclient-base/specs/restapigroup-enhancements/`
+- `codecraftai-restclient-base/specs/task-handle-base/`
+- `codecraftai-provisioning/specs/venue-crusoe/`
+- `codecraftai-credentials/specs/crusoe-credentials/`
 
 ---
 

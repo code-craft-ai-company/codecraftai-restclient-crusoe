@@ -8,27 +8,27 @@
 """
 
 __author__ = "Myron Walker"
-__copyright__ = "Copyright 2026, Automation Mojo LLC"
+__copyright__ = "Copyright 2026, Code Craft AI LLC"
 __credits__ = []
 
 
 import pytest
 import requests_mock
 
-from automojo.restclient.crusoe.crusoeclient import CrusoeClient
-from automojo.restclient.crusoe.exceptions.crusoeexceptions import (
+from ccai.restclient.crusoe.crusoeclient import CrusoeClient
+from ccai.restclient.crusoe.exceptions.crusoeexceptions import (
     CrusoeApiError, CrusoeAuthenticationError, CrusoeCidrValidationError,
     CrusoePlacementMismatchError
 )
-from automojo.restclient.crusoe.specs.crusoeplacementgroupspec import (
+from ccai.restclient.crusoe.specs.crusoeplacementgroupspec import (
     CrusoePlacementGroupSpec
 )
-from automojo.restclient.crusoe.specs.crusoesecuritygroupspec import (
+from ccai.restclient.crusoe.specs.crusoesecuritygroupspec import (
     CrusoeSecurityGroupSpec
 )
-from automojo.restclient.crusoe.specs.crusoesubnetspec import CrusoeSubnetSpec
-from automojo.restclient.crusoe.specs.crusoevmlaunchspec import CrusoeVmLaunchSpec
-from automojo.restclient.crusoe.specs.crusoevpcspec import CrusoeVpcSpec
+from ccai.restclient.crusoe.specs.crusoesubnetspec import CrusoeSubnetSpec
+from ccai.restclient.crusoe.specs.crusoevmlaunchspec import CrusoeVmLaunchSpec
+from ccai.restclient.crusoe.specs.crusoevpcspec import CrusoeVpcSpec
 
 
 BASE = "https://api.crusoecloud.com/v1alpha5"
@@ -261,7 +261,7 @@ def test_apply_tags(crusoe_client: CrusoeClient) -> None:
         mock.patch("{}/projects/proj-1/vpcs/vpc-1".format(BASE), json={})
         crusoe_client.tags.apply(project_id="proj-1", resource_type="vpc",
                                  resource_id="vpc-1",
-                                 tags=[{"automojo-run-id": "r1"}])
+                                 tags=[{"codecraftai-run-id": "r1"}])
         body = mock.request_history[0].json()
-        assert body["labels"]["automojo-run-id"] == "r1"
+        assert body["labels"]["codecraftai-run-id"] == "r1"
     return

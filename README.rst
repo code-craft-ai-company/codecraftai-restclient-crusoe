@@ -1,12 +1,12 @@
 =========================================
-Automation Mojo Interop - Crusoe Cloud
+Code Craft AI Interop - Crusoe Cloud
 =========================================
 
-The ``automojo-restclient-crusoe`` package is the venue-specific REST client for Crusoe
+The ``codecraftai-restclient-crusoe`` package is the venue-specific REST client for Crusoe
 Cloud, a GPU-first cloud whose API at ``api.crusoecloud.com`` is closely AWS-shaped: VPCs,
 subnets, security groups, virtual machines, disks, and InfiniBand-enabled placement
 groups. Crusoe's relatively conventional shape makes it the simplest cloud-shaped AI venue
-to slot into the neutral ``CloudProvisioner`` model defined in ``automojo-provisioning``.
+to slot into the neutral ``CloudProvisioner`` model defined in ``codecraftai-provisioning``.
 
 Highlights
 ==========
@@ -15,15 +15,15 @@ Highlights
 - InfiniBand placement groups — the placement-group primitive that makes Crusoe interesting for multi-node training.
 - Typed task handles — long-running operations (instance create, disk attach, snapshot) return typed task handles so the provisioner's verify stage can wait on them with caller-controlled aspects.
 - Neutral provisioning model — exercises the ``CloudAcceleratorSpec`` + ``CloudInterconnect`` extensions defined in §7.1 of the design plan.
-- Aspects-driven transport — every behaviour-bearing call accepts ``aspects: AspectsRest = DEFAULT_CRUSOE_ASPECTS``; credentials enter as typed ``CrusoeApiKeyCredential`` instances from ``automojo-credentials``.
+- Aspects-driven transport — every behaviour-bearing call accepts ``aspects: AspectsRest = DEFAULT_CRUSOE_ASPECTS``; credentials enter as typed ``CrusoeApiKeyCredential`` instances from ``codecraftai-credentials``.
 
 Repository Structure
 ====================
 
 - ``development/`` - Runtime environment scripts.
 - ``repository-setup/`` - Repository homing and setup scripts.
-- ``source/packages/automojo/restclient/crusoe/`` - Package source code.
-- ``source/testroots/testbase/automojo/tests/restclient/crusoe/`` - TestBase test roots.
+- ``source/packages/ccai/restclient/crusoe/`` - Package source code.
+- ``source/testroots/testbase/ccai/tests/restclient/crusoe/`` - TestBase test roots.
 - ``specs/`` - Requirements, design, and task documentation (Kiro-style).
 - ``userguide/`` - Standards, conventions, and documentation.
 

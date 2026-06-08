@@ -9,25 +9,25 @@
 """
 
 __author__ = "Myron Walker"
-__copyright__ = "Copyright 2026, Automation Mojo LLC"
+__copyright__ = "Copyright 2026, Code Craft AI LLC"
 __credits__ = []
 
 
-from automojo.restclient.crusoe.model.crusoevpc import CrusoeVpc
-from automojo.restclient.crusoe.model.crusoedisk import CrusoeDisk
-from automojo.restclient.crusoe.model.crusoesubnet import CrusoeSubnet
-from automojo.restclient.crusoe.model.crusoesecuritygroup import (
+from ccai.restclient.crusoe.model.crusoevpc import CrusoeVpc
+from ccai.restclient.crusoe.model.crusoedisk import CrusoeDisk
+from ccai.restclient.crusoe.model.crusoesubnet import CrusoeSubnet
+from ccai.restclient.crusoe.model.crusoesecuritygroup import (
     CrusoeSecurityGroup
 )
-from automojo.restclient.crusoe.model.crusoevm import CrusoeVm
-from automojo.restclient.crusoe.model.crusoeimage import CrusoeImage
-from automojo.restclient.crusoe.model.crusoeoperationresult import (
+from ccai.restclient.crusoe.model.crusoevm import CrusoeVm
+from ccai.restclient.crusoe.model.crusoeimage import CrusoeImage
+from ccai.restclient.crusoe.model.crusoeoperationresult import (
     CrusoeOperationResult
 )
-from automojo.restclient.crusoe.model.crusoeplacementgroup import (
+from ccai.restclient.crusoe.model.crusoeplacementgroup import (
     CrusoePlacementGroup
 )
-from automojo.restclient.crusoe.model.crusoesshkey import CrusoeSshKey
+from ccai.restclient.crusoe.model.crusoesshkey import CrusoeSshKey
 
 
 def test_vpc_roundtrip() -> None:

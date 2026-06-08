@@ -6,7 +6,7 @@ The `crusoe-client` feature provides a REST client for Crusoe Cloud's
 `api.crusoecloud.com`. Crusoe is AWS-shaped (VPC/subnet/SG/VM/disk) with
 first-class InfiniBand placement groups for multi-node GPU training. This
 client exposes those primitives so the `venue-crusoe` provisioner in
-`automojo-provisioning` can implement the neutral lifecycle.
+`codecraftai-provisioning` can implement the neutral lifecycle.
 
 Transport is REST on `RestClientBase`. Authentication uses
 `CrusoeApiKeyCredential` (access key id + secret). Every behaviour-bearing
