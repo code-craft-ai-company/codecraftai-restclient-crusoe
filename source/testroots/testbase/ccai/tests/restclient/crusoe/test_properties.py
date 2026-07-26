@@ -17,8 +17,8 @@ import ipaddress
 
 import pytest
 
-from hypothesis import given, settings
-from hypothesis import strategies as st
+from ccai.testbase.properties import given
+from ccai.testbase.properties import strategies as st
 
 from ccai.errors.exceptions import SemanticError
 
@@ -44,8 +44,8 @@ from ccai.restclient.crusoe.model.crusoetaskhandle import (
 # Paging traversal totality
 # ----------------------------------------------------------------------
 
-@settings(max_examples=80)
-@given(page_sizes=st.lists(st.integers(min_value=0, max_value=5),
+@given(
+    constraints={"max_examples": 80},page_sizes=st.lists(st.integers(min_value=0, max_value=5),
                            min_size=1, max_size=8))
 def test_paging_traversal_visits_every_item(page_sizes) -> None:
     """
@@ -86,8 +86,8 @@ def test_paging_traversal_visits_every_item(page_sizes) -> None:
 # URL composition
 # ----------------------------------------------------------------------
 
-@settings(max_examples=80)
-@given(segments=st.lists(st.text(alphabet=st.characters(
+@given(
+    constraints={"max_examples": 80},segments=st.lists(st.text(alphabet=st.characters(
             min_codepoint=33, max_codepoint=126), min_size=1, max_size=12),
         min_size=1, max_size=5))
 def test_compose_leaf_encodes_each_segment(segments) -> None:
@@ -104,8 +104,7 @@ def test_compose_leaf_encodes_each_segment(segments) -> None:
     return
 
 
-@settings(max_examples=40)
-@given(segment=st.text(min_size=1, max_size=20))
+@given(segment=st.text(min_size=1, max_size=20), constraints={"max_examples": 40})
 def test_encode_segment_is_deterministic(segment) -> None:
     """
         encode_segment is deterministic for identical input.
@@ -129,8 +128,8 @@ def test_compose_leaf_rejects_empty_segment() -> None:
 # CIDR containment
 # ----------------------------------------------------------------------
 
-@settings(max_examples=120)
-@given(vpc_prefix=st.integers(min_value=8, max_value=20),
+@given(
+    constraints={"max_examples": 120},vpc_prefix=st.integers(min_value=8, max_value=20),
        sub_extra=st.integers(min_value=0, max_value=8),
        third_octet=st.integers(min_value=0, max_value=255))
 def test_cidr_containment_matches_ipaddress(vpc_prefix, sub_extra,
@@ -196,8 +195,8 @@ _NONTERMINAL = ("pending", "running", "queued", "in_progress")
 _TERMINAL = ("succeeded", "failed", "cancelled")
 
 
-@settings(max_examples=60, deadline=None)
-@given(prefix=st.lists(st.sampled_from(_NONTERMINAL),
+@given(
+    constraints={"max_examples": 60},prefix=st.lists(st.sampled_from(_NONTERMINAL),
                        min_size=0, max_size=4),
        terminal=st.sampled_from(_TERMINAL))
 def test_task_handle_wait_terminates(prefix, terminal) -> None:
@@ -234,8 +233,7 @@ def test_task_handle_wait_times_out() -> None:
 # Idempotent retry equivalence
 # ----------------------------------------------------------------------
 
-@settings(max_examples=40)
-@given(repeats=st.integers(min_value=1, max_value=4))
+@given(repeats=st.integers(min_value=1, max_value=4), constraints={"max_examples": 40})
 def test_paging_repeated_traversal_is_equivalent(repeats) -> None:
     """
         Re-running a paged traversal over the same page set yields the same
