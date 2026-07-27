@@ -13,9 +13,11 @@ __copyright__ = "Copyright 2026, Code Craft AI LLC"
 __credits__ = []
 
 
+from ccai import testbase
+
+
 import ipaddress
 
-import pytest
 
 from ccai.testbase.properties import given
 from ccai.testbase.properties import strategies as st
@@ -117,9 +119,9 @@ def test_compose_leaf_rejects_empty_segment() -> None:
     """
         compose_leaf rejects an empty or None segment with SemanticError.
     """
-    with pytest.raises(SemanticError):
+    with testbase.raises(SemanticError):
         compose_leaf(base="/v1alpha5", segments=["projects", ""])
-    with pytest.raises(SemanticError):
+    with testbase.raises(SemanticError):
         compose_leaf(base="/v1alpha5", segments=["projects", None])
     return
 
@@ -155,7 +157,7 @@ def test_cidr_containment_rejects_bad_cidr() -> None:
     """
         cidr_is_contained raises CrusoeCidrValidationError for a bad CIDR.
     """
-    with pytest.raises(CrusoeCidrValidationError):
+    with testbase.raises(CrusoeCidrValidationError):
         cidr_is_contained(child_cidr="not-a-cidr", parent_cidr="10.0.0.0/16")
     return
 
@@ -224,7 +226,7 @@ def test_task_handle_wait_times_out() -> None:
     handle = CrusoeTaskHandle(operation_id="op-2", operations_group=group)
 
     tiny = AspectsCrusoe(completion_interval=0.001, completion_timeout=0.02)
-    with pytest.raises(TimeoutError):
+    with testbase.raises(TimeoutError):
         handle.wait(aspects=tiny)
     return
 

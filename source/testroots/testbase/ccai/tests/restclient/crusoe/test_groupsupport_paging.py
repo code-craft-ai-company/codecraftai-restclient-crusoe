@@ -13,7 +13,8 @@ __copyright__ = "Copyright 2026, Code Craft AI LLC"
 __credits__ = []
 
 
-import pytest
+from ccai import testbase
+
 
 from typing import Any, Dict, List, Optional
 
@@ -52,6 +53,6 @@ def test_iter_paged_items_raises_on_cursor_cycle():
         page = {"items": [{"id": "x"}], "next_page_token": "stuck"}
         return page
 
-    with pytest.raises(CrusoeApiError):
+    with testbase.raises(CrusoeApiError):
         list(iter_paged_items(fetch_page=fetch_page))
     return

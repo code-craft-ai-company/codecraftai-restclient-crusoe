@@ -12,7 +12,9 @@ __copyright__ = "Copyright 2026, Code Craft AI LLC"
 __credits__ = []
 
 
-import pytest
+from ccai import testbase
+
+
 import requests_mock
 
 from ccai.restclient.crusoe.crusoeclient import CrusoeClient
@@ -69,7 +71,7 @@ def test_create_subnet_rejects_uncontained_cidr(
     """
     spec = CrusoeSubnetSpec(name="sn", cidr="192.168.0.0/24", vpc_id="vpc-1",
                             vpc_cidr="10.0.0.0/16", location="us-east1-a")
-    with pytest.raises(CrusoeCidrValidationError):
+    with testbase.raises(CrusoeCidrValidationError):
         crusoe_client.subnets.create(spec=spec)
     return
 
@@ -185,7 +187,7 @@ def test_launch_vm_rejects_placement_mismatch(
                               placement_group_id="ib-1",
                               placement_group_interconnect="infiniband",
                               instance_type_supports_ib=False)
-    with pytest.raises(CrusoePlacementMismatchError):
+    with testbase.raises(CrusoePlacementMismatchError):
         crusoe_client.vms.launch(project_id="proj-1", spec=spec)
     return
 
@@ -210,7 +212,7 @@ def test_http_401_reclassified(crusoe_client: CrusoeClient) -> None:
     with requests_mock.Mocker() as mock:
         mock.get("{}/projects/proj-1/vpcs".format(BASE),
                  status_code=401, text="unauthorized")
-        with pytest.raises(CrusoeAuthenticationError):
+        with testbase.raises(CrusoeAuthenticationError):
             crusoe_client.vpcs.list(project_id="proj-1")
     return
 
@@ -222,7 +224,7 @@ def test_http_500_reclassified(crusoe_client: CrusoeClient) -> None:
     with requests_mock.Mocker() as mock:
         mock.get("{}/projects/proj-1/vpcs".format(BASE),
                  status_code=500, text="boom")
-        with pytest.raises(CrusoeApiError):
+        with testbase.raises(CrusoeApiError):
             crusoe_client.vpcs.list(project_id="proj-1")
     return
 

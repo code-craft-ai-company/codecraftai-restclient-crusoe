@@ -12,7 +12,8 @@ __copyright__ = "Copyright 2026, Code Craft AI LLC"
 __credits__ = []
 
 
-import pytest
+from ccai import testbase
+
 
 from ccai.errors.exceptions import ConfigurationError
 
@@ -40,7 +41,7 @@ def test_client_rejects_wrong_credential() -> None:
     """
     bad = BasicCredential(identifier="bad", categories=["basic"],
                           username="u", password="p")
-    with pytest.raises(ConfigurationError):
+    with testbase.raises(ConfigurationError):
         CrusoeClient(credential=bad)
     return
 
