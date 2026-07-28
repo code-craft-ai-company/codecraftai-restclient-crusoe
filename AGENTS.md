@@ -52,7 +52,7 @@ enter as typed `CrusoeApiKeyCredential` instances from
 The 'codecraftai-restclient-crusoe' package repository utilizes the 'testbase' framework
 for tests that require live resources, and the 'unittest' framework for isolated
 component tests. Single-host tests live under
-'source/testroots/ccai/tests/singlehost/restclient/crusoe'.
+'source/testroots/testbase/ccai/tests/restclient/crusoe'.
 
 Property-based tests (`ccai.testbase.properties`, NOT hypothesis) are required for paging, URL composition,
 idempotent retry semantics, and CIDR/subnet containment checks on the
