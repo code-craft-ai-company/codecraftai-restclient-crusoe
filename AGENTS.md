@@ -54,7 +54,7 @@ for tests that require live resources, and the 'unittest' framework for isolated
 component tests. Single-host tests live under
 'source/testroots/ccai/tests/singlehost/restclient/crusoe'.
 
-Property-based tests (hypothesis) are required for paging, URL composition,
+Property-based tests (`ccai.testbase.properties`, NOT hypothesis) are required for paging, URL composition,
 idempotent retry semantics, and CIDR/subnet containment checks on the
 networking primitives.
 
@@ -123,3 +123,10 @@ This repository utilizes a virtual environment wrapper script to correctly set u
 
 - **Linux / macOS:** Use `.venv/bin/python-env <script.py>`
 - **Windows:** Use `.venv/bin/python-env.ps1 <script.py>`
+
+Property testing uses `ccai.testbase.properties`, never `hypothesis`. The fleet
+ships its own libraries rather than depending on third-party ones, and
+`hypothesis` was never a declared dependency of this repo — the requirement
+named a package nothing installed. Note that a testbase `@given` cannot run
+under plain `pytest`: it reports the strategy parameters as missing fixtures.
+Run property tests through the testbase runner.
