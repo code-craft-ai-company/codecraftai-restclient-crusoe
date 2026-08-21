@@ -12,7 +12,7 @@
 
 from ccai import testbase
 
-from ccai.tests.restclient.crusoe.factories import (
+from .factories import (
     create_crusoe_credential,
     create_crusoe_client
 )
