@@ -24,8 +24,6 @@ from ccai.testbase.properties import strategies as st
 
 from ccai.errors.exceptions import SemanticError
 
-from ccai.interfaces.itaskhandle import TaskState
-
 from ccai.restclient.crusoe.aspectscrusoe import AspectsCrusoe
 from ccai.restclient.crusoe.apigroups.groupsupport import (
     compose_leaf, encode_segment, iter_paged_items

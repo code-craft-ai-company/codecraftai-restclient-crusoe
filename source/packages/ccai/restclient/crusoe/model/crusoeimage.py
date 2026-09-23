@@ -12,7 +12,7 @@ __copyright__ = "Copyright 2026, Code Craft AI LLC"
 __credits__ = []
 
 
-from typing import Any, Dict, Optional
+from typing import Any, Dict
 
 
 class CrusoeImage:

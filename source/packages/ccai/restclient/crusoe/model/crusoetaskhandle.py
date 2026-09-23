@@ -15,7 +15,7 @@ __credits__ = []
 
 import time
 
-from typing import TYPE_CHECKING, Callable
+from typing import TYPE_CHECKING
 
 from ccai.errors.exceptions import SemanticError
 
